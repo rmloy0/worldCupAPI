@@ -20,6 +20,9 @@
   },
   "homepage": "https://github.com/rmloy0/worldCupAPI#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "body-parser": "^2.2.2",
+    "express": "^5.2.1",
+    "mongodb": "^7.2.0",
+    "mongoose": "^9.6.3"
   }
 }
