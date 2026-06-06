@@ -1,50 +1,44 @@
 const express = require('express');
 const router = express.Router();
-const { getAllPlayers, getPlayerById, createPlayer, updatePlayer, deletePlayer } = require('../controllers/players');
-const validatePlayer = require('../middlewares/validatePlayers');
+const { getAllStadiums, getStadiumById, createStadium, updateStadium, deleteStadium } = require('../controllers/stadiums');
+const validateStadium = require('../middlewares/validateStadiums');
 
-router.get('/', getAllPlayers);
-router.get('/:id', getPlayerById);
-router.post('/', validatePlayer, (req, res) => {
+router.get('/', getAllStadiums);
+router.get('/:id', getStadiumById);
+router.post('/', validateStadium, (req, res) => {
   /* #swagger.parameters['body'] = {
     in: 'body',
     required: true,
     schema: {
-      firstName: 'Lionel',
-      lastName: 'Messi',
-      country: 'Argentina',
-      age: 36,
-      club: 'Inter Miami',
-      league: 'MLS',
-      fifaRanking: 1,
-      previousWorldCups: 5,
-      worldCupGoals: 13,
-      hobbies: ['football', 'family'],
-      position: 'Forward'
+      stadiumName: 'Lusail Stadium',
+      city: 'Lusail',
+      location: 'North of Doha',
+      country: 'Qatar',
+      builtDate: '2021-11-19',
+      capacity: 88966,
+      amenities: ['VIP lounges', 'parking', 'food courts'],
+      funFacts: ['Hosted the 2022 World Cup Final']
     }
   } */
-  createPlayer(req, res);
+  createStadium(req, res);
 });
-router.put('/:id', validatePlayer, (req, res) => {
+router.put('/:id', validateStadium, (req, res) => {
   /* #swagger.parameters['body'] = {
     in: 'body',
     required: true,
     schema: {
-      firstName: 'Lionel',
-      lastName: 'Messi',
-      country: 'Argentina',
-      age: 36,
-      club: 'Inter Miami',
-      league: 'MLS',
-      fifaRanking: 1,
-      previousWorldCups: 5,
-      worldCupGoals: 13,
-      hobbies: ['football', 'family'],
-      position: 'Forward'
+      stadiumName: 'Lusail Stadium',
+      city: 'Lusail',
+      location: 'North of Doha',
+      country: 'Qatar',
+      builtDate: '2021-11-19',
+      capacity: 88966,
+      amenities: ['VIP lounges', 'parking', 'food courts'],
+      funFacts: ['Hosted the 2022 World Cup Final']
     }
   } */
-  updatePlayer(req, res);
+  updateStadium(req, res);
 });
-router.delete('/:id', deletePlayer);
+router.delete('/:id', deleteStadium);
 
 module.exports = router;
