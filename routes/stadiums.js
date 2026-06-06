@@ -1,17 +1,17 @@
 const express = require('express');
 const router = express.Router();
 const {
-  getAllPlayers,
-  getPlayerById,
-  createPlayer,
-  updatePlayer,
-  deletePlayer,
-} = require('../controllers/players');
-const validatePlayer = require('../middlewares/validatePlayers');
+  getAllStadiums,
+  getStadiumById,
+  createStadium,
+  updateStadium,
+  deleteStadium,
+} = require('../controllers/stadiums');
+const validateStadium = require('../middlewares/validateStadiums');
 
-router.get('/', getAllPlayers);
-router.get('/:id', getPlayerById);
-router.post('/', validatePlayer, (req, res) => {
+router.get('/', getAllStadiums);
+router.get('/:id', getStadiumById);
+router.post('/', validateStadium, (req, res) => {
   /* #swagger.parameters['body'] = {
     in: 'body',
     required: true,

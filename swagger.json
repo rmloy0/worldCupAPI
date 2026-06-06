@@ -5,7 +5,7 @@
     "description": "API for managing World Cup players and stadiums",
     "version": "1.0.0"
   },
-  "host": "localhost:4000",
+  "host": "worldcupapi.onrender.com",
   "basePath": "/",
   "schemes": [
     "http"
@@ -232,9 +232,6 @@
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       },
@@ -302,9 +299,6 @@
           },
           "400": {
             "description": "Bad Request"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       }
@@ -326,9 +320,6 @@
           },
           "404": {
             "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       },
@@ -405,9 +396,6 @@
           },
           "404": {
             "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       },
@@ -427,9 +415,6 @@
           },
           "404": {
             "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       }
