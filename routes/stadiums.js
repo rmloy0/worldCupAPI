@@ -7,50 +7,44 @@ const {
   updatePlayer,
   deletePlayer,
 } = require('../controllers/players');
-const validateStadium = require('../middlewares/ValidateStadiums');
+const validatePlayer = require('../middlewares/validatePlayers');
 
 router.get('/', getAllPlayers);
 router.get('/:id', getPlayerById);
-router.post('/', validateStadium, (req, res) => {
+router.post('/', validatePlayer, (req, res) => {
   /* #swagger.parameters['body'] = {
     in: 'body',
     required: true,
     schema: {
-      firstName: 'Lionel',
-      lastName: 'Messi',
-      country: 'Argentina',
-      age: 36,
-      club: 'Inter Miami',
-      league: 'MLS',
-      fifaRanking: 1,
-      previousWorldCups: 5,
-      worldCupGoals: 13,
-      hobbies: ['football', 'family'],
-      position: 'Forward'
+      stadiumName: 'Lusail Stadium',
+      city: 'Lusail',
+      location: 'North of Doha',
+      country: 'Qatar',
+      builtDate: '2021-11-19',
+      capacity: 88966,
+      amenities: ['VIP lounges', 'parking', 'food courts'],
+      funFacts: ['Hosted the 2022 World Cup Final']
     }
   } */
-  createPlayer(req, res);
+  createStadium(req, res);
 });
 router.put('/:id', validateStadium, (req, res) => {
   /* #swagger.parameters['body'] = {
     in: 'body',
     required: true,
     schema: {
-      firstName: 'Lionel',
-      lastName: 'Messi',
-      country: 'Argentina',
-      age: 36,
-      club: 'Inter Miami',
-      league: 'MLS',
-      fifaRanking: 1,
-      previousWorldCups: 5,
-      worldCupGoals: 13,
-      hobbies: ['football', 'family'],
-      position: 'Forward'
+      stadiumName: 'Lusail Stadium',
+      city: 'Lusail',
+      location: 'North of Doha',
+      country: 'Qatar',
+      builtDate: '2021-11-19',
+      capacity: 88966,
+      amenities: ['VIP lounges', 'parking', 'food courts'],
+      funFacts: ['Hosted the 2022 World Cup Final']
     }
   } */
-  updatePlayer(req, res);
+  updateStadium(req, res);
 });
-router.delete('/:id', deletePlayer);
+router.delete('/:id', deleteStadium);
 
 module.exports = router;
