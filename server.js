@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const { initDB } = require('./database');
-
+require('dotenv').config();
 
 const port = process.env.PORT || 4000;
 const app = express();
