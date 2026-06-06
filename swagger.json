@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Super Hero API",
-    "description": "API for superheroes and villains",
+    "title": "World Cup API",
+    "description": "API for managing World Cup players and stadiums",
     "version": "1.0.0"
   },
   "host": "localhost:4000",
@@ -232,6 +232,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -245,55 +248,49 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "stadiumName": {
                   "type": "string",
-                  "example": "Lionel"
+                  "example": "Lusail Stadium"
                 },
-                "lastName": {
+                "city": {
                   "type": "string",
-                  "example": "Messi"
+                  "example": "Lusail"
+                },
+                "location": {
+                  "type": "string",
+                  "example": "North of Doha"
                 },
                 "country": {
                   "type": "string",
-                  "example": "Argentina"
+                  "example": "Qatar"
                 },
-                "age": {
-                  "type": "number",
-                  "example": 36
-                },
-                "club": {
+                "builtDate": {
                   "type": "string",
-                  "example": "Inter Miami"
+                  "example": "2021-11-19"
                 },
-                "league": {
-                  "type": "string",
-                  "example": "MLS"
-                },
-                "fifaRanking": {
+                "capacity": {
                   "type": "number",
-                  "example": 1
+                  "example": 88966
                 },
-                "previousWorldCups": {
-                  "type": "number",
-                  "example": 5
-                },
-                "worldCupGoals": {
-                  "type": "number",
-                  "example": 13
-                },
-                "hobbies": {
+                "amenities": {
                   "type": "array",
                   "example": [
-                    "football",
-                    "family"
+                    "VIP lounges",
+                    "parking",
+                    "food courts"
                   ],
                   "items": {
                     "type": "string"
                   }
                 },
-                "position": {
-                  "type": "string",
-                  "example": "Forward"
+                "funFacts": {
+                  "type": "array",
+                  "example": [
+                    "Hosted the 2022 World Cup Final"
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
                 }
               }
             }
@@ -305,6 +302,9 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -326,6 +326,9 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -345,55 +348,49 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "stadiumName": {
                   "type": "string",
-                  "example": "Lionel"
+                  "example": "Lusail Stadium"
                 },
-                "lastName": {
+                "city": {
                   "type": "string",
-                  "example": "Messi"
+                  "example": "Lusail"
+                },
+                "location": {
+                  "type": "string",
+                  "example": "North of Doha"
                 },
                 "country": {
                   "type": "string",
-                  "example": "Argentina"
+                  "example": "Qatar"
                 },
-                "age": {
-                  "type": "number",
-                  "example": 36
-                },
-                "club": {
+                "builtDate": {
                   "type": "string",
-                  "example": "Inter Miami"
+                  "example": "2021-11-19"
                 },
-                "league": {
-                  "type": "string",
-                  "example": "MLS"
-                },
-                "fifaRanking": {
+                "capacity": {
                   "type": "number",
-                  "example": 1
+                  "example": 88966
                 },
-                "previousWorldCups": {
-                  "type": "number",
-                  "example": 5
-                },
-                "worldCupGoals": {
-                  "type": "number",
-                  "example": 13
-                },
-                "hobbies": {
+                "amenities": {
                   "type": "array",
                   "example": [
-                    "football",
-                    "family"
+                    "VIP lounges",
+                    "parking",
+                    "food courts"
                   ],
                   "items": {
                     "type": "string"
                   }
                 },
-                "position": {
-                  "type": "string",
-                  "example": "Forward"
+                "funFacts": {
+                  "type": "array",
+                  "example": [
+                    "Hosted the 2022 World Cup Final"
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
                 }
               }
             }
@@ -408,6 +405,9 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -427,6 +427,9 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }

@@ -2,8 +2,8 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
   info: {
-    title: 'Super Hero API',
-    description: 'API for superheroes and villains',
+    title: 'World Cup API',
+    description: 'API for managing World Cup players and stadiums',
   },
   host: 'localhost:4000',
 };
