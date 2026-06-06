@@ -1,0 +1,435 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Super Hero API",
+    "description": "API for superheroes and villains",
+    "version": "1.0.0"
+  },
+  "host": "localhost:4000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/players/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "Lionel"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Messi"
+                },
+                "country": {
+                  "type": "string",
+                  "example": "Argentina"
+                },
+                "age": {
+                  "type": "number",
+                  "example": 36
+                },
+                "club": {
+                  "type": "string",
+                  "example": "Inter Miami"
+                },
+                "league": {
+                  "type": "string",
+                  "example": "MLS"
+                },
+                "fifaRanking": {
+                  "type": "number",
+                  "example": 1
+                },
+                "previousWorldCups": {
+                  "type": "number",
+                  "example": 5
+                },
+                "worldCupGoals": {
+                  "type": "number",
+                  "example": 13
+                },
+                "hobbies": {
+                  "type": "array",
+                  "example": [
+                    "football",
+                    "family"
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "position": {
+                  "type": "string",
+                  "example": "Forward"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/players/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "Lionel"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Messi"
+                },
+                "country": {
+                  "type": "string",
+                  "example": "Argentina"
+                },
+                "age": {
+                  "type": "number",
+                  "example": 36
+                },
+                "club": {
+                  "type": "string",
+                  "example": "Inter Miami"
+                },
+                "league": {
+                  "type": "string",
+                  "example": "MLS"
+                },
+                "fifaRanking": {
+                  "type": "number",
+                  "example": 1
+                },
+                "previousWorldCups": {
+                  "type": "number",
+                  "example": 5
+                },
+                "worldCupGoals": {
+                  "type": "number",
+                  "example": 13
+                },
+                "hobbies": {
+                  "type": "array",
+                  "example": [
+                    "football",
+                    "family"
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "position": {
+                  "type": "string",
+                  "example": "Forward"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/stadiums/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "Lionel"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Messi"
+                },
+                "country": {
+                  "type": "string",
+                  "example": "Argentina"
+                },
+                "age": {
+                  "type": "number",
+                  "example": 36
+                },
+                "club": {
+                  "type": "string",
+                  "example": "Inter Miami"
+                },
+                "league": {
+                  "type": "string",
+                  "example": "MLS"
+                },
+                "fifaRanking": {
+                  "type": "number",
+                  "example": 1
+                },
+                "previousWorldCups": {
+                  "type": "number",
+                  "example": 5
+                },
+                "worldCupGoals": {
+                  "type": "number",
+                  "example": 13
+                },
+                "hobbies": {
+                  "type": "array",
+                  "example": [
+                    "football",
+                    "family"
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "position": {
+                  "type": "string",
+                  "example": "Forward"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/stadiums/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "Lionel"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Messi"
+                },
+                "country": {
+                  "type": "string",
+                  "example": "Argentina"
+                },
+                "age": {
+                  "type": "number",
+                  "example": 36
+                },
+                "club": {
+                  "type": "string",
+                  "example": "Inter Miami"
+                },
+                "league": {
+                  "type": "string",
+                  "example": "MLS"
+                },
+                "fifaRanking": {
+                  "type": "number",
+                  "example": 1
+                },
+                "previousWorldCups": {
+                  "type": "number",
+                  "example": 5
+                },
+                "worldCupGoals": {
+                  "type": "number",
+                  "example": 13
+                },
+                "hobbies": {
+                  "type": "array",
+                  "example": [
+                    "football",
+                    "family"
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "position": {
+                  "type": "string",
+                  "example": "Forward"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  }
+}

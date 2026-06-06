@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const { initDB } = require('./database');
 require('dotenv').config();
+const swaggerUI = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 
 const port = process.env.PORT || 4000;
 const app = express();
@@ -13,6 +15,9 @@ app
     next();
   })
   .use('/', require('./routes'));
+
+// Swagger
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 // Error handler
 app.use((err, req, res, next) => {

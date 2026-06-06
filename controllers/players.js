@@ -1,56 +1,62 @@
 const Player = require('../models/players');
 
-const getAllPlayers = async (req, res) => {
+const getAllPlayers = async (req, res, next) => {
   try {
     const players = await Player.find();
     res.status(200).json(players);
-  } catch (e) {
-    res.status(500).json({ error: e.message });
+  } catch (error) {
+    next(error);
   }
 };
 
-const getPlayerById = async (req, res) => {
+const getPlayerById = async (req, res, next) => {
   try {
     const player = await Player.findById(req.params.id);
     if (!player) return res.status(404).json({ error: 'Player not found' });
     res.status(200).json(player);
-  } catch (e) {
-    res.status(500).json({ error: e.message });
+  } catch (error) {
+    next(error);
   }
 };
 
-const createPlayer = async (req, res) => {
+const createPlayer = async (req, res, next) => {
   try {
     const player = new Player(req.body);
     const result = await player.save();
     res.status(201).json(result);
-  } catch (e) {
-    res.status(500).json({ error: e.message });
+  } catch (error) {
+    next(error);
   }
 };
 
-const updatePlayer = async (req, res) => {
+const updatePlayer = async (req, res, next) => {
   try {
     const result = await Player.findByIdAndUpdate(
       req.params.id,
       { $set: req.body },
-      { new: true }
+      { new: true },
     );
     if (!result) return res.status(404).json({ error: 'Player not found' });
     res.status(200).json(result);
-  } catch (e) {
-    res.status(500).json({ error: e.message });
+  } catch (error) {
+    next(error);
   }
 };
 
-const deletePlayer = async (req, res) => {
+const deletePlayer = async (req, res, next) => {
   try {
     const result = await Player.findByIdAndDelete(req.params.id);
     if (!result) return res.status(404).json({ error: 'Player not found' });
     res.status(200).json({ message: 'Player deleted successfully' });
-  } catch (e) {
-    res.status(500).json({ error: e.message });
+  } catch (error) {
+    next(error);
   }
 };
 
-module.exports = { getAllPlayers, getPlayerById, createPlayer, updatePlayer, deletePlayer };
+module.exports = {
+  getAllPlayers,
+  getPlayerById,
+  createPlayer,
+  updatePlayer,
+  deletePlayer,
+};
