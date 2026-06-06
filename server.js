@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const mongodb = require('./db/connect');
+const { initDB } = require('./database');
+
 
 const port = process.env.PORT || 4000;
 const app = express();
@@ -19,7 +20,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Something went wrong' });
 });
 
-mongodb.initDb((err) => {
+initDB((err) => {
   if (err) {
     console.log(err);
   } else {

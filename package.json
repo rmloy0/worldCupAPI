@@ -21,6 +21,7 @@
   "homepage": "https://github.com/rmloy0/worldCupAPI#readme",
   "dependencies": {
     "body-parser": "^2.2.2",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "joi": "^18.2.1",
     "mongodb": "^7.2.0",
