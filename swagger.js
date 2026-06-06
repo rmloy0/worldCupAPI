@@ -5,7 +5,7 @@ const doc = {
     title: 'Super Hero API',
     description: 'API for superheroes and villains',
   },
-  host: 'localhost:4000',
+  host: 'worldcupapi.onrender.com',
 };
 
 const outputFile = './swagger.json';

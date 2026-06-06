@@ -1,11 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const { getAllPlayers, getPlayerById, createPlayer, updatePlayer, deletePlayer } = require('../controllers/players');
-const validatePlayer = require('../middlewares/validatePlayers');
+const {
+  getAllPlayers,
+  getPlayerById,
+  createPlayer,
+  updatePlayer,
+  deletePlayer,
+} = require('../controllers/players');
+const validateStadium = require('../middlewares/ValidateStadiums');
 
 router.get('/', getAllPlayers);
 router.get('/:id', getPlayerById);
-router.post('/', validatePlayer, (req, res) => {
+router.post('/', validateStadium, (req, res) => {
   /* #swagger.parameters['body'] = {
     in: 'body',
     required: true,
@@ -25,7 +31,7 @@ router.post('/', validatePlayer, (req, res) => {
   } */
   createPlayer(req, res);
 });
-router.put('/:id', validatePlayer, (req, res) => {
+router.put('/:id', validateStadium, (req, res) => {
   /* #swagger.parameters['body'] = {
     in: 'body',
     required: true,
