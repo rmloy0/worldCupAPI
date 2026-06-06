@@ -9,7 +9,7 @@ const {
 } = require('../controllers/players');
 const validatePlayer = require('../middlewares/validatePlayers');
 
-router.get('/', getAllStadiums);
+router.get('/', getAllPlayers);
 router.get('/:id', getPlayerById);
 router.post('/', validatePlayer, (req, res) => {
   /* #swagger.parameters['body'] = {
