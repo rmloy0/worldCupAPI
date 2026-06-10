@@ -11,7 +11,7 @@ const validateMatches = require('../middlewares/validateMatches');
 
 router.get('/', getAllMatches);
 router.get('/:id', getMatchesById);
-router.post('/', createMatches, (req, res) => {
+router.post('/', validateMatches, createMatches, (req, res) => {
   /* #swagger.parameters['body'] = {
   in: 'body',
   required: true,
@@ -28,8 +28,6 @@ router.post('/', createMatches, (req, res) => {
     }
   }
 } */
-
-  createStadium(req, res);
 });
 router.put('/:id', validateMatches, (req, res) => {
   /* #swagger.parameters['body'] = {
@@ -49,8 +47,8 @@ router.put('/:id', validateMatches, (req, res) => {
   }
 } */
 
-  updateStadium(req, res);
+  updateMatches(req, res);
 });
-router.delete('/:id', deleteStadium);
+router.delete('/:id', deleteMatches);
 
 module.exports = router;
