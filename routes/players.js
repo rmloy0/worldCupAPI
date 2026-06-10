@@ -1,58 +1,56 @@
 const express = require('express');
 const router = express.Router();
-
 const {
-  getAllMatches,
-  getMatchesById,
-  createMatches,
-  updateMatches,
-  deleteMatches,
-} = require('../controllers/matches');
+  getAllPlayers,
+  getPlayerById,
+  createPlayer,
+  updatePlayer,
+  deletePlayer,
+} = require('../controllers/players');
+const validatePlayer = require('../middlewares/validatePlayers');
 
-const validateMatches = require('../middlewares/validateMatches');
-
-router.get('/', getAllMatches);
-
-router.get('/:id', getMatchesById);
-
-router.post('/', validateMatches, createMatches);
-
-/* #swagger.parameters['body'] = {
-  in: 'body',
-  required: true,
-  schema: {
-    matchDate: '2026-06-15T00:00:00.000Z',
-    homeTeam: 'Brazil',
-    awayTeam: 'Germany',
-    round: 'Round of 16',
-    group: 'B',
-    stadium: 'Lusail Stadium',
-    score: {
-      home: 2,
-      away: 1
+router.get('/', getAllPlayers);
+router.get('/:id', getPlayerById);
+router.post('/', validatePlayer, (req, res) => {
+  /* #swagger.parameters['body'] = {
+    in: 'body',
+    required: true,
+    schema: {
+      firstName: 'Lionel',
+      lastName: 'Messi',
+      country: 'Argentina',
+      age: 36,
+      club: 'Inter Miami',
+      league: 'MLS',
+      fifaRanking: 1,
+      previousWorldCups: 5,
+      worldCupGoals: 13,
+      hobbies: ['football', 'family'],
+      position: 'Forward'
     }
-  }
-} */
-
-router.put('/:id', validateMatches, updateMatches);
-
-/* #swagger.parameters['body'] = {
-  in: 'body',
-  required: true,
-  schema: {
-    matchDate: '2026-06-15T00:00:00.000Z',
-    homeTeam: 'Brazil',
-    awayTeam: 'Germany',
-    round: 'Round of 16',
-    group: 'B',
-    stadium: 'Lusail Stadium',
-    score: {
-      home: 2,
-      away: 1
+  } */
+  createPlayer(req, res);
+});
+router.put('/:id', validatePlayer, (req, res) => {
+  /* #swagger.parameters['body'] = {
+    in: 'body',
+    required: true,
+    schema: {
+      firstName: 'Lionel',
+      lastName: 'Messi',
+      country: 'Argentina',
+      age: 36,
+      club: 'Inter Miami',
+      league: 'MLS',
+      fifaRanking: 1,
+      previousWorldCups: 5,
+      worldCupGoals: 13,
+      hobbies: ['football', 'family'],
+      position: 'Forward'
     }
-  }
-} */
-
-router.delete('/:id', deleteMatches);
+  } */
+  updatePlayer(req, res);
+});
+router.delete('/:id', deletePlayer);
 
 module.exports = router;
