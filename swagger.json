@@ -430,6 +430,55 @@
       },
       "post": {
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "matchDate": {
+                  "type": "string",
+                  "example": "2026-06-15T00:00:00.000Z"
+                },
+                "homeTeam": {
+                  "type": "string",
+                  "example": "Brazil"
+                },
+                "awayTeam": {
+                  "type": "string",
+                  "example": "Germany"
+                },
+                "round": {
+                  "type": "string",
+                  "example": "Round of 16"
+                },
+                "group": {
+                  "type": "string",
+                  "example": "B"
+                },
+                "stadium": {
+                  "type": "string",
+                  "example": "Lusail Stadium"
+                },
+                "score": {
+                  "type": "object",
+                  "properties": {
+                    "home": {
+                      "type": "number",
+                      "example": 2
+                    },
+                    "away": {
+                      "type": "number",
+                      "example": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Created"
@@ -468,6 +517,53 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "matchDate": {
+                  "type": "string",
+                  "example": "2026-06-15T00:00:00.000Z"
+                },
+                "homeTeam": {
+                  "type": "string",
+                  "example": "Brazil"
+                },
+                "awayTeam": {
+                  "type": "string",
+                  "example": "Germany"
+                },
+                "round": {
+                  "type": "string",
+                  "example": "Round of 16"
+                },
+                "group": {
+                  "type": "string",
+                  "example": "B"
+                },
+                "stadium": {
+                  "type": "string",
+                  "example": "Lusail Stadium"
+                },
+                "score": {
+                  "type": "object",
+                  "properties": {
+                    "home": {
+                      "type": "number",
+                      "example": 2
+                    },
+                    "away": {
+                      "type": "number",
+                      "example": 1
+                    }
+                  }
+                }
+              }
+            }
           }
         ],
         "responses": {

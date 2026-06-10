@@ -16,9 +16,31 @@ router.get('/', getAllMatches);
 router.get('/:id', getMatchesById);
 
 // POST create match
-router.post('/', validateMatches, createMatches);
+router.post('/', validateMatches, (req, res) => {
+  /* #swagger.parameters['body'] = {
+  in: 'body',
+  required: true,
+  schema: {
+    matchDate: '2026-06-15T00:00:00.000Z',
+    homeTeam: 'Brazil',
+    awayTeam: 'Germany',
+    round: 'Round of 16',
+    group: 'B',
+    stadium: 'Lusail Stadium',
+    score: {
+      home: 2,
+      away: 1
+    }
+  }
+} */
+  createMatches(req, res);
+});
+router.put(
+  '/:id',
+  validateMatches,
 
-/* #swagger.parameters['body'] = {
+  (req, res) => {
+    /* #swagger.parameters['body'] = {
   in: 'body',
   required: true,
   schema: {
@@ -35,24 +57,9 @@ router.post('/', validateMatches, createMatches);
   }
 } */
 
-router.put('/:id', validateMatches, updateMatches);
-
-/* #swagger.parameters['body'] = {
-  in: 'body',
-  required: true,
-  schema: {
-    matchDate: '2026-06-15T00:00:00.000Z',
-    homeTeam: 'Brazil',
-    awayTeam: 'Germany',
-    round: 'Round of 16',
-    group: 'B',
-    stadium: 'Lusail Stadium',
-    score: {
-      home: 2,
-      away: 1
-    }
-  }
-} */
+    updateMatches(res, req);
+  },
+);
 
 router.delete('/:id', deleteMatches);
 
