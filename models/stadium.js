@@ -1,14 +1,38 @@
 const mongoose = require('mongoose');
 
-const stadiumSchema = new mongoose.Schema({
-  stadiumName: { type: String, required: true },
-  city: { type: String, required: true },
-  location: { type: String, required: true },
-  country: { type: String, required: true },
-  builtDate: { type: Date, required: true },
-  capacity: { type: Number, required: true },
-  amenities: { type: [String], required: true },
-  funFacts: { type: [String], required: true }
+const matchSchema = new mongoose.Schema({
+  matchDate: {
+    type: Date,
+    required: true,
+  },
+  homeTeam: {
+    type: String,
+    required: true,
+  },
+  awayTeam: {
+    type: String,
+    required: true,
+  },
+  round: {
+    type: String,
+    required: true,
+  },
+  group: {
+    type: String,
+  },
+  stadium: {
+    type: String,
+  },
+  score: {
+    home: {
+      type: Number,
+      required: true,
+    },
+    away: {
+      type: Number,
+      required: true,
+    },
+  },
 });
 
-module.exports = mongoose.model('Stadium', stadiumSchema);
+module.exports = mongoose.model('Match', matchSchema);

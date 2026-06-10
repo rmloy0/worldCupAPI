@@ -7,5 +7,6 @@ router.get('/', (req, res) => {
 
 router.use('/players', require('./players'));
 router.use('/stadiums', require('./stadiums'));
+router.use('/matches', require('./stadiums'));
 
 module.exports = router;

@@ -8,7 +8,7 @@
   "host": "worldcupapi.onrender.com",
   "basePath": "/",
   "schemes": [
-    "https"
+    "http"
   ],
   "paths": {
     "/": {
@@ -304,6 +304,199 @@
       }
     },
     "/stadiums/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "stadiumName": {
+                  "type": "string",
+                  "example": "Lusail Stadium"
+                },
+                "city": {
+                  "type": "string",
+                  "example": "Lusail"
+                },
+                "location": {
+                  "type": "string",
+                  "example": "North of Doha"
+                },
+                "country": {
+                  "type": "string",
+                  "example": "Qatar"
+                },
+                "builtDate": {
+                  "type": "string",
+                  "example": "2021-11-19"
+                },
+                "capacity": {
+                  "type": "number",
+                  "example": 88966
+                },
+                "amenities": {
+                  "type": "array",
+                  "example": [
+                    "VIP lounges",
+                    "parking",
+                    "food courts"
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "funFacts": {
+                  "type": "array",
+                  "example": [
+                    "Hosted the 2022 World Cup Final"
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/matches/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "stadiumName": {
+                  "type": "string",
+                  "example": "Lusail Stadium"
+                },
+                "city": {
+                  "type": "string",
+                  "example": "Lusail"
+                },
+                "location": {
+                  "type": "string",
+                  "example": "North of Doha"
+                },
+                "country": {
+                  "type": "string",
+                  "example": "Qatar"
+                },
+                "builtDate": {
+                  "type": "string",
+                  "example": "2021-11-19"
+                },
+                "capacity": {
+                  "type": "number",
+                  "example": 88966
+                },
+                "amenities": {
+                  "type": "array",
+                  "example": [
+                    "VIP lounges",
+                    "parking",
+                    "food courts"
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "funFacts": {
+                  "type": "array",
+                  "example": [
+                    "Hosted the 2022 World Cup Final"
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/matches/{id}": {
       "get": {
         "description": "",
         "parameters": [
