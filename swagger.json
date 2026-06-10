@@ -430,62 +430,6 @@
       },
       "post": {
         "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "stadiumName": {
-                  "type": "string",
-                  "example": "Lusail Stadium"
-                },
-                "city": {
-                  "type": "string",
-                  "example": "Lusail"
-                },
-                "location": {
-                  "type": "string",
-                  "example": "North of Doha"
-                },
-                "country": {
-                  "type": "string",
-                  "example": "Qatar"
-                },
-                "builtDate": {
-                  "type": "string",
-                  "example": "2021-11-19"
-                },
-                "capacity": {
-                  "type": "number",
-                  "example": 88966
-                },
-                "amenities": {
-                  "type": "array",
-                  "example": [
-                    "VIP lounges",
-                    "parking",
-                    "food courts"
-                  ],
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "funFacts": {
-                  "type": "array",
-                  "example": [
-                    "Hosted the 2022 World Cup Final"
-                  ],
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        ],
         "responses": {
           "201": {
             "description": "Created"
@@ -524,60 +468,6 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "stadiumName": {
-                  "type": "string",
-                  "example": "Lusail Stadium"
-                },
-                "city": {
-                  "type": "string",
-                  "example": "Lusail"
-                },
-                "location": {
-                  "type": "string",
-                  "example": "North of Doha"
-                },
-                "country": {
-                  "type": "string",
-                  "example": "Qatar"
-                },
-                "builtDate": {
-                  "type": "string",
-                  "example": "2021-11-19"
-                },
-                "capacity": {
-                  "type": "number",
-                  "example": 88966
-                },
-                "amenities": {
-                  "type": "array",
-                  "example": [
-                    "VIP lounges",
-                    "parking",
-                    "food courts"
-                  ],
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "funFacts": {
-                  "type": "array",
-                  "example": [
-                    "Hosted the 2022 World Cup Final"
-                  ],
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
           }
         ],
         "responses": {
