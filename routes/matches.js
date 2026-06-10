@@ -11,6 +11,8 @@ const {
 
 const validateMatches = require('../middlewares/ValidateMatches');
 
+const updateMatchSchema = require('../middlewares/ValidateMatches');
+
 router.get('/', getAllMatches);
 
 router.get('/:id', getMatchesById);
@@ -37,7 +39,7 @@ router.post('/', validateMatches, (req, res) => {
 });
 router.put(
   '/:id',
-  validateMatches,
+  updateMatchSchema,
 
   (req, res) => {
     /* #swagger.parameters['body'] = {
