@@ -59,7 +59,7 @@ router.put(
   }
 } */
 
-    updateMatches(res, req);
+    updateMatches(req, res);
   },
 );
 

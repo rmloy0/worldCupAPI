@@ -13,36 +13,14 @@ const MatchSchema = Joi.object({
   }).required(),
 });
 
-const updateMatchSchema = Joi.object({
-  matchDate: Joi.date(),
-  homeTeam: Joi.string(),
-  awayTeam: Joi.string(),
-  round: Joi.string(),
-  group: Joi.string(),
-  stadium: Joi.string(),
-  score: Joi.object({
-    home: Joi.number().integer(),
-    away: Joi.number().integer(),
-  }),
-}).min(1);
+const validateMatch = (req, res, next) => {
+  const { error } = MatchSchema.validate(req.body);
 
-const validateCreateMatch = (req, res, next) => {
-  const { error } = createMatchSchema.validate(req.body);
   if (error) {
     return res.status(400).json({ error: error.message });
   }
+
   next();
 };
 
-const validateUpdateMatch = (req, res, next) => {
-  const { error } = updateMatchSchema.validate(req.body);
-  if (error) {
-    return res.status(400).json({ error: error.message });
-  }
-  next();
-};
-
-module.exports = {
-  validateCreateMatch,
-  validateUpdateMatch,
-};
+module.exports = validateMatch;
