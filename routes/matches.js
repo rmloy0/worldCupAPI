@@ -9,7 +9,7 @@ const {
   deleteMatches,
 } = require('../controllers/matches');
 
-const validateMatches = require('../middlewares/validateMatches');
+const validateMatches = require('../middlewares/ValidateMatches');
 
 router.get('/', getAllMatches);
 
