@@ -1,8 +1,8 @@
 const { getPlayerById } = require('../controllers/players');
-const { createPlayer } = require('../controllers/players');
+const { getAllPlayers } = require('../controllers/players');
 
-describe('Get player by id', () => {
-  test('should execute without crashing', () => {
+describe('Players', () => {
+  test('Getplayers by ID and it should execute without crashing', () => {
     const req = {
       params: { id: '6a248c21c7985a907bcdc527' },
     };
@@ -19,12 +19,12 @@ describe('Get player by id', () => {
     expect(true).toBe(true);
   });
 
-  test('createPlayer should execute without crashing', () => {
-    const req = { body: { name: 'Test Player' } };
+  test('getPlayers should execute without crashing', () => {
+    const req = {};
     const res = { status: jest.fn().mockReturnThis(), json: jest.fn() };
     const next = jest.fn();
 
-    createPlayer(req, res, next);
+    getAllPlayers(req, res, next);
 
     expect(true).toBe(true);
   });
