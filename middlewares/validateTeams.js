@@ -1,7 +1,5 @@
 const Joi = require('joi');
 
-const Joi = require('joi');
-
 const TeamSchema = Joi.object({
   country: Joi.string().required(),
   worldCupTitles: Joi.number().integer().required(),

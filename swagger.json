@@ -8,7 +8,7 @@
   "host": "worldcupapi.onrender.com",
   "basePath": "/",
   "schemes": [
-    "https"
+    "http"
   ],
   "paths": {
     "/": {
@@ -561,6 +561,181 @@
                       "example": 1
                     }
                   }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/teams/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "country": {
+                  "type": "string",
+                  "example": "Brazil"
+                },
+                "worldCupTitles": {
+                  "type": "number",
+                  "example": 5
+                },
+                "continent": {
+                  "type": "string",
+                  "example": "South America"
+                },
+                "confederation": {
+                  "type": "string",
+                  "example": "CONMEBOL"
+                },
+                "flagColors": {
+                  "type": "array",
+                  "example": [
+                    "green",
+                    "yellow",
+                    "blue"
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "fifaRanking": {
+                  "type": "number",
+                  "example": 1
+                },
+                "coach": {
+                  "type": "string",
+                  "example": "Dorival Junior"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/teams/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "country": {
+                  "type": "string",
+                  "example": "Brazil"
+                },
+                "worldCupTitles": {
+                  "type": "number",
+                  "example": 5
+                },
+                "continent": {
+                  "type": "string",
+                  "example": "South America"
+                },
+                "confederation": {
+                  "type": "string",
+                  "example": "CONMEBOL"
+                },
+                "flagColors": {
+                  "type": "array",
+                  "example": [
+                    "green",
+                    "yellow",
+                    "blue"
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "fifaRanking": {
+                  "type": "number",
+                  "example": 1
+                },
+                "coach": {
+                  "type": "string",
+                  "example": "Dorival Junior"
                 }
               }
             }

@@ -8,10 +8,11 @@ const {
   deletePlayer,
 } = require('../controllers/players');
 const validatePlayer = require('../middlewares/validatePlayers');
+const isAuthenticated = require('../auth/isAuthenticated');
 
 router.get('/', getAllPlayers);
 router.get('/:id', getPlayerById);
-router.post('/', validatePlayer, (req, res) => {
+router.post('/', isAuthenticated, validatePlayer, (req, res) => {
   /* #swagger.parameters['body'] = {
     in: 'body',
     required: true,
@@ -31,7 +32,7 @@ router.post('/', validatePlayer, (req, res) => {
   } */
   createPlayer(req, res);
 });
-router.put('/:id', validatePlayer, (req, res) => {
+router.put('/:id', isAuthenticated, validatePlayer, (req, res) => {
   /* #swagger.parameters['body'] = {
     in: 'body',
     required: true,
@@ -51,6 +52,6 @@ router.put('/:id', validatePlayer, (req, res) => {
   } */
   updatePlayer(req, res);
 });
-router.delete('/:id', deletePlayer);
+router.delete('/:id', isAuthenticated, deletePlayer);
 
 module.exports = router;
