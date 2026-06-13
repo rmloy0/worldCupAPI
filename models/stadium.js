@@ -11,4 +11,4 @@ const stadiumSchema = new mongoose.Schema({
   funFacts: { type: [String], required: true },
 });
 
-module.exports = mongoose.model('Stadium', stadiumSchema);
+module.exports = mongoose.model('Stadium', stadiumSchema, 'stadia');
