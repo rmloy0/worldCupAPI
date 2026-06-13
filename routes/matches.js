@@ -12,13 +12,14 @@ const {
 const validateMatches = require('../middlewares/ValidateMatches');
 
 const updateMatchSchema = require('../middlewares/ValidateMatches');
+const isAuthenticated = require('../auth/isAuthenticated');
 
 router.get('/', getAllMatches);
 
 router.get('/:id', getMatchesById);
 
 // POST create match
-router.post('/', validateMatches, (req, res) => {
+router.post('/', isAuthenticated, validateMatches, (req, res) => {
   /* #swagger.parameters['body'] = {
   in: 'body',
   required: true,
@@ -39,6 +40,7 @@ router.post('/', validateMatches, (req, res) => {
 });
 router.put(
   '/:id',
+  isAuthenticated,
   updateMatchSchema,
 
   (req, res) => {
@@ -63,6 +65,6 @@ router.put(
   },
 );
 
-router.delete('/:id', deleteMatches);
+router.delete('/:id', isAuthenticated, deleteMatches);
 
 module.exports = router;

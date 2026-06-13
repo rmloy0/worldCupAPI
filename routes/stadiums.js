@@ -8,10 +8,11 @@ const {
   deleteStadium,
 } = require('../controllers/stadiums');
 const validateStadium = require('../middlewares/validateStadiums');
+const isAuthenticated = require('../auth/isAuthenticated');
 
 router.get('/', getAllStadiums);
 router.get('/:id', getStadiumById);
-router.post('/', validateStadium, (req, res) => {
+router.post('/', isAuthenticated, validateStadium, (req, res) => {
   /* #swagger.parameters['body'] = {
     in: 'body',
     required: true,
@@ -28,7 +29,7 @@ router.post('/', validateStadium, (req, res) => {
   } */
   createStadium(req, res);
 });
-router.put('/:id', validateStadium, (req, res) => {
+router.put('/:id', isAuthenticated, validateStadium, (req, res) => {
   /* #swagger.parameters['body'] = {
     in: 'body',
     required: true,
@@ -45,6 +46,6 @@ router.put('/:id', validateStadium, (req, res) => {
   } */
   updateStadium(req, res);
 });
-router.delete('/:id', deleteStadium);
+router.delete('/:id', isAuthenticated, deleteStadium);
 
 module.exports = router;
